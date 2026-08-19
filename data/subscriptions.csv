@@ -1,0 +1,14 @@
+subscription_id,user_id,plan_tier,billing_cycle,mrr_amount,status,start_date,end_date
+SUB-00001,USR-00001,Enterprise,monthly,699.00,active,2023-01-20 10:00:00,
+SUB-00002,USR-00002,Pro Team,monthly,199.00,active,2023-01-25 15:30:00,
+SUB-00003,USR-00003,Growth,monthly,79.00,active,2023-02-10 12:00:00,
+SUB-00005,USR-00005,Enterprise,monthly,699.00,active,2023-03-08 11:30:00,
+SUB-00006,USR-00006,Pro Team,monthly,199.00,canceled,2023-03-18 19:00:00,2023-09-18 00:00:00
+SUB-00007,USR-00007,Growth,monthly,79.00,active,2023-04-01 09:00:00,
+SUB-00009,USR-00009,Pro Team,monthly,199.00,active,2023-04-26 16:20:00,
+SUB-00010,USR-00010,Growth,monthly,79.00,canceled,2023-05-10 10:00:00,2023-08-10 00:00:00
+SUB-00011,USR-00011,Enterprise,monthly,699.00,active,2023-05-20 18:00:00,
+SUB-00012,USR-00012,Pro Team,monthly,199.00,active,2023-06-08 13:00:00,
+SUB-00013,USR-00013,Growth,monthly,79.00,active,2023-06-25 15:00:00,
+SUB-00014,USR-00014,Enterprise,monthly,699.00,active,2023-07-12 11:00:00,
+SUB-00015,USR-00015,Growth,monthly,79.00,active,2023-07-28 17:00:00,

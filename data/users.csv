@@ -1,0 +1,16 @@
+user_id,company_name,signup_date,acquisition_channel,plan_tier,company_size,industry,country
+USR-00001,Venture_1 Labs,2023-01-14 09:30:00,Organic Search,Enterprise,51-200,FinTech,United States
+USR-00002,Venture_2 Technologies,2023-01-18 14:15:00,LinkedIn B2B,Pro Team,201-1000,Healthcare AI,United Kingdom
+USR-00003,Venture_3 Data,2023-02-02 11:45:00,Product Hunt / Referral,Growth,11-50,E-Commerce,Germany
+USR-00004,Venture_4 Systems,2023-02-15 16:20:00,Google Paid Ads,Free Starter,1-10,DevTools,Canada
+USR-00005,Venture_5 Global,2023-03-01 10:00:00,Organic Search,Enterprise,1000+,FinTech,United States
+USR-00006,Venture_6 HQ,2023-03-12 18:30:00,Product Hunt / Referral,Pro Team,51-200,MarTech,Australia
+USR-00007,Venture_7 Labs,2023-03-25 08:45:00,LinkedIn B2B,Growth,11-50,EdTech,France
+USR-00008,Venture_8 Technologies,2023-04-05 13:10:00,Google Paid Ads,Free Starter,1-10,Logistics,India
+USR-00009,Venture_9 Data,2023-04-19 15:50:00,Direct / Word-of-Mouth,Pro Team,201-1000,FinTech,United States
+USR-00010,Venture_10 Systems,2023-05-02 09:15:00,Organic Search,Growth,51-200,Healthcare AI,Singapore
+USR-00011,Venture_11 Global,2023-05-14 17:05:00,Product Hunt / Referral,Enterprise,1000+,E-Commerce,United States
+USR-00012,Venture_12 HQ,2023-06-01 12:20:00,LinkedIn B2B,Pro Team,51-200,FinTech,United Kingdom
+USR-00013,Venture_13 Labs,2023-06-18 14:40:00,Google Paid Ads,Growth,11-50,MarTech,Germany
+USR-00014,Venture_14 Data,2023-07-04 10:30:00,Organic Search,Enterprise,51-200,DevTools,Canada
+USR-00015,Venture_15 Systems,2023-07-22 16:15:00,Product Hunt / Referral,Growth,1-10,EdTech,United States

@@ -1,0 +1,27 @@
+event_id,user_id,event_name,event_timestamp
+EVT-0000001,USR-00001,signed_up,2023-01-14 09:30:00
+EVT-0000002,USR-00001,completed_workspace_setup,2023-01-14 10:15:00
+EVT-0000003,USR-00001,invited_teammate,2023-01-15 11:00:00
+EVT-0000004,USR-00001,invited_teammate,2023-01-15 11:05:00
+EVT-0000005,USR-00001,created_analytics_dashboard,2023-01-16 14:20:00
+EVT-0000006,USR-00001,integrated_third_party_api,2023-01-17 16:45:00
+EVT-0000007,USR-00002,signed_up,2023-01-18 14:15:00
+EVT-0000008,USR-00002,completed_workspace_setup,2023-01-18 15:00:00
+EVT-0000009,USR-00002,invited_teammate,2023-01-20 09:30:00
+EVT-0000010,USR-00002,created_analytics_dashboard,2023-01-22 13:10:00
+EVT-0000011,USR-00003,signed_up,2023-02-02 11:45:00
+EVT-0000012,USR-00003,completed_workspace_setup,2023-02-02 12:30:00
+EVT-0000013,USR-00003,created_analytics_dashboard,2023-02-05 17:00:00
+EVT-0000014,USR-00004,signed_up,2023-02-15 16:20:00
+EVT-0000015,USR-00004,completed_workspace_setup,2023-02-15 16:40:00
+EVT-0000016,USR-00005,signed_up,2023-03-01 10:00:00
+EVT-0000017,USR-00005,completed_workspace_setup,2023-03-01 10:45:00
+EVT-0000018,USR-00005,invited_teammate,2023-03-02 14:00:00
+EVT-0000019,USR-00005,invited_teammate,2023-03-02 14:05:00
+EVT-0000020,USR-00005,integrated_third_party_api,2023-03-03 11:20:00
+EVT-0000021,USR-00005,created_analytics_dashboard,2023-03-04 15:30:00
+EVT-0000022,USR-00006,signed_up,2023-03-12 18:30:00
+EVT-0000023,USR-00006,completed_workspace_setup,2023-03-12 19:10:00
+EVT-0000024,USR-00007,signed_up,2023-03-25 08:45:00
+EVT-0000025,USR-00007,completed_workspace_setup,2023-03-25 09:30:00
+EVT-0000026,USR-00007,created_analytics_dashboard,2023-03-28 14:00:00

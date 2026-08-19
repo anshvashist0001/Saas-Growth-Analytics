@@ -1,0 +1,8 @@
+ticket_id,user_id,category,ticket_status,csat_score,resolution_time_hours,created_at
+TCK-00001,USR-00001,Billing & Invoices,resolved,5,4,2023-02-14 11:20:00
+TCK-00002,USR-00002,API Integration Error,resolved,4,12,2023-03-02 16:45:00
+TCK-00003,USR-00006,Dashboard Query Timeout,escalated,2,42,2023-04-10 14:15:00
+TCK-00004,USR-00010,User Access & Permissions,open,2,28,2023-05-18 09:30:00
+TCK-00005,USR-00005,Feature Request,closed,5,8,2023-04-22 17:00:00
+TCK-00006,USR-00009,Billing & Invoices,resolved,5,2,2023-05-30 10:10:00
+TCK-00007,USR-00012,API Integration Error,resolved,4,16,2023-06-20 15:40:00
