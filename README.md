@@ -78,10 +78,3 @@ The interactive dashboard will immediately open in your browser at `http://local
 | **CAC Payback Period** | **8.2 Months** | < 12 Months | 🟢 Fast Capital Recovery |
 | **Onboarding "Aha!" Moment** | **2+ Teammates Invited in Week 1** | Leads to 4.2x 90-day retention | 💡 Core Growth Focus |
 
----
-
-## 💼 Resume Ready: Tailored Bullet Points
-
-Check out the full guide in [`docs/RESUME_BULLET_POINTS.md`](file:///C:/Users/admin/Desktop/proj/docs/RESUME_BULLET_POINTS.md).
-
-> *"Built an end-to-end SaaS Growth & Revenue Intelligence Platform in Python, SQL, and Streamlit, analyzing $3.85M ARR across 12,000+ accounts; modeled MRR waterfalls and 12-month cohort retention curves, identifying an onboarding drop-off that informed a collaboration strategy projected to reduce churn by 28%."*
