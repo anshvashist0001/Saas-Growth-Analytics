@@ -1,6 +1,6 @@
 """
 SaaS Growth Analytics - Data Generator Script
-Generates deterministic, highly realistic relational datasets for a B2B SaaS platform:
+Generates deterministic, synthetic relational datasets for a B2B SaaS platform:
 - users.csv
 - subscriptions.csv
 - product_events.csv
@@ -98,6 +98,9 @@ for u in users:
         months_active = random.randint(1, 10)
         end_date = start_date + timedelta(days=months_active * 30)
         status = 'canceled'
+        if end_date > END_DATE:
+            end_date = None
+            status = 'active'
     else:
         end_date = None
         status = 'active'
@@ -119,7 +122,7 @@ for u in users:
     # Generate monthly invoices
     curr_date = start_date
     limit_date = end_date if end_date and end_date < END_DATE else END_DATE
-    while curr_date <= limit_date:
+    while curr_date <= END_DATE and (end_date is None or curr_date < end_date):
         inv_id = f"INV-{inv_id_counter:06d}"
         inv_id_counter += 1
         invoices.append({

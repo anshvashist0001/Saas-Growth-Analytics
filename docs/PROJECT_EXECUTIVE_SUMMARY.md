@@ -1,76 +1,50 @@
-# Executive Business Report: SaaS Product & Growth Intelligence
-**Prepared by**: Data Analyst & Product Intelligence Team  
-**Subject**: Product Lifecycle Telemetry, Retention Dynamics, MRR Movement, & Churn Mitigation Strategy  
-**Company Scope**: CloudAnalytics SaaS ($3.85M ARR, 1,420 Active Paid Accounts, 12,000+ Total Users)
+# Methods and project scope
 
----
+This project demonstrates analytics on synthetic subscription records. It does
+not describe a client engagement, a deployed company system or measured business
+impact. The small fixture has 15 users; the generator can create 2,500.
 
-## 1. Executive Summary & Core Objectives
+## Revenue
 
-CloudAnalytics operates a B2B SaaS data intelligence platform on a tiered subscription model (Free Starter, Growth at $79/mo, Pro Team at $199/mo, and Enterprise at $699/mo). 
+Monthly snapshots use subscriptions active immediately before the next month
+starts. Start dates are inclusive; end dates are exclusive. Canceled accounts
+remain in the date spine with zero MRR so their loss is included in the waterfall.
 
-The leadership team commissioned this analytics project to address three core business questions:
-1. **Financial Health & Unit Economics**: What is our Net Revenue Retention (NRR) and Quick Ratio trajectory? Are expansions outpacing churn?
-2. **Product Activation & Funnel Leaks**: Where in the user onboarding funnel are we losing the highest proportion of potential paying subscribers?
-3. **Proactive Churn Prevention**: What behavioral indicators distinguish churned customers from high-LTV champions 30–60 days before cancellation?
+Starting MRR + new/reactivated MRR + expansion - contraction - churn = ending MRR.
+NRR includes only accounts with positive starting MRR. It is undefined when the
+starting balance is zero. ARR annualizes the ending balance by multiplying by 12.
+The final reporting month is the latest month represented by signup, event,
+invoice or cancellation dates. Partial final months should be treated cautiously.
 
----
+The data contains no historical upgrades, downgrades or marketing spend. It
+cannot support robust expansion analysis, CAC or LTV/CAC. Invoice failures are
+not automatically interpreted as subscription cancellations.
 
-## 2. Key Performance Indicators (KPI) Scorecard
+## Product behavior
 
-| Metric | Current Metric | Target Benchmark | YoY Trend | Business Health Status |
-| :--- | :--- | :--- | :--- | :--- |
-| **Annual Recurring Revenue (ARR)** | **$3,846,000** | $3,500,000 | +28.4% | 🟢 Strong Growth |
-| **Monthly Recurring Revenue (MRR)** | **$320,500** | $290,000 | +8.4% MoM | 🟢 Scalable Expansion |
-| **Net Revenue Retention (NRR)** | **112.4%** | > 110.0% | +3.2 pts | 🟢 Expansion exceeds contraction/churn |
-| **Gross Revenue Retention (GRR)** | **91.2%** | > 88.0% | +1.5 pts | 🟢 Low downsell volume |
-| **Blended Monthly Churn Rate** | **2.1%** | < 2.5% | -0.4 pts | 🟢 Controlled B2B benchmark |
-| **Customer Lifetime Value (LTV)** | **$4,150** | $3,500 | +18.5% | 🟢 High expansion per seat |
-| **Customer Acquisition Cost (CAC)** | **$1,080** | < $1,200 | -8.2% | 🟢 Paid ad efficiency gained |
-| **LTV to CAC Ratio** | **3.84x** | > 3.0x | +0.6x | 🟢 Highly profitable unit economics |
-| **CAC Payback Period** | **8.2 Months** | < 12 Months | -1.1 mo | 🟢 Rapid capital recovery |
+Retention counts users with any event, including the signup event, within each
+calendar month. Its denominator is the full signup cohort. Zero means an observed
+month with no events; a blank means the month has not been observed yet.
 
----
+The funnel enforces timestamp order. The generator does not guarantee that all
+users follow that order, so funnel conversion differs from independent feature
+adoption. Neither is evidence that inviting teammates causes higher retention.
 
-## 3. Deep-Dive Analytical Findings
+## Account health and churn
 
-### A. The "Aha! Moment" & Multi-Seat Collaboration Effect
-Through multi-variate feature correlation and SQL window analysis, we discovered a stark divergence in long-term customer survival based on early collaboration behaviors:
+The health score starts at 60 for activity in the last 30 days, or 20 otherwise.
+It adds five points per recent event up to 40, subtracts ten per unresolved ticket,
+and is clamped to 0-100. Its thresholds are assumptions for demonstration.
 
-```text
-Team Invites within 7 Days of Signup vs. 90-Day Retention:
-─────────────────────────────────────────────────────────────────────────────
-0 Invites (Solo User)       :  18.4% Retained at Day 90  ██
-1 Teammate Invited          :  41.2% Retained at Day 90  █████
-2+ Teammates Invited        :  78.6% Retained at Day 90  ██████████ (4.2x Lift!)
-─────────────────────────────────────────────────────────────────────────────
-```
-* **Root Cause**: Solo users quickly exhaust their individual analytical curiosity. When an account invites 2 or more colleagues, the platform transforms into a shared system of record, dramatically elevating switching costs and embedding CloudAnalytics into daily executive standups.
+The separate churn model uses a 30-day feature window followed by a 90-day outcome
+window. It requires a sufficient sample and both classes in training and testing.
+Chronological splitting with purged label windows reduces temporal leakage, but
+the synthetic process still limits how its scores should be interpreted.
 
-### B. Onboarding Funnel Leakage Analysis
-Analysis of the 5-step conversion funnel revealed that **56.8% of user drop-offs occur between Step 2 (Completed Workspace Setup) and Step 3 (Invited Teammate)**. 
-* Only **34.2%** of registered users ever trigger an automated data pipeline or custom dashboard, primarily due to complex manual API configuration screens during the first session.
+## What would be needed for a real deployment
 
-### C. Acquisition Channel Efficiency
-```text
-Acquisition Channel Performance Ranking:
-1. Product Hunt / Referral : 8.4% Paid Conversion | $224 ARPU | $340 CAC (LTV/CAC = 6.2x) 🏆
-2. Organic Search / SEO    : 5.2% Paid Conversion | $189 ARPU | $420 CAC (LTV/CAC = 4.8x)
-3. LinkedIn B2B Campaigns  : 4.6% Paid Conversion | $310 ARPU | $1,150 CAC (LTV/CAC = 3.6x)
-4. Google Paid Ads         : 2.9% Paid Conversion | $145 ARPU | $890 CAC (LTV/CAC = 2.1x) ⚠️
-```
-
----
-
-## 4. Strategic Recommendations & Roadmap
-
-### 1. In-Product Activation Overhaul (Projected +$240K ARR)
-* **Action**: Introduce a guided interactive onboarding checklist with 1-click sample templates (e.g., "E-commerce Revenue Template", "SaaS Funnel Dashboard") to achieve initial value delivery in under 5 minutes (reducing Time-to-Value).
-* **Target**: Lift activation rate from 34.2% to 48.0%.
-
-### 2. Proactive Customer Success Playbook (Projected -28% Churn)
-* **Action**: Implement the automated Churn Risk Scoring Model (developed in `05_churn_health_score.sql`). 
-* Trigger automated notifications to Customer Success Managers whenever an account’s health score dips below 50 (e.g., 0 logins for 10 consecutive days or unresolved support tickets).
-
-### 3. Shift Marketing Spend to High-LTV Channels
-* **Action**: Reallocate 30% of low-margin Google Paid Ad spend into B2B referral partnerships and developer documentation SEO, boosting blended LTV/CAC from 3.84x to 4.5x.
+Subscription change history, a defined reporting cutoff, reconciled billing
+records, marketing costs, event validation, data-quality monitoring and an access
+model would be needed before using these metrics for business decisions. Claims
+about activation lift or churn savings would also need measured intervention
+results, rather than calculations on simulated records.
